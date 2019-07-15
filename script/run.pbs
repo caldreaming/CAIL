@@ -1,0 +1,19 @@
+source activate bl
+WORK_HOME=/home/liaobo/bl/cail
+BERT_HOME=$WORK_HOME/bert
+MODEL_HOME=$WORK_HOME/chinese_L-12_H-768_A-12
+OQMRC_DIR=$WORK_HOME/data
+LOG_FILE=$BERT_HOME/log_temp/train.log3
+
+cd $BERT_HOME
+python run_cail_with_yorn.py \
+  --vocab_file=$MODEL_HOME/vocab.txt \
+  --bert_config_file=$MODEL_HOME/bert_config.json \
+  --do_train=True \
+  --train_file=$OQMRC_DIR/big_train_data.json \
+  --train_batch_size=8 \
+  --learning_rate=3e-5 \
+  --num_train_epochs=7.0 \
+  --max_seq_length=512 \
+  --output_dir=$BERT_HOME/cail_yorn/ \
+  >& $LOG_FILE

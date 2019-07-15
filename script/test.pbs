@@ -1,0 +1,8 @@
+source activate bl
+WORK_HOME=/home/liaobo/bl/cail
+BERT_HOME=$WORK_HOME/bert
+LOG_FILE=$BERT_HOME/log_temp/test.log
+
+cd $BERT_HOME
+python main.py \
+  >& $LOG_FILE
