@@ -31,7 +31,7 @@
 python run_cail_with_yorn.py \
   --vocab_file=$MODEL_HOME/vocab.txt \
   --bert_config_file=$MODEL_HOME/bert_config.json \
-  --init_checkpoint=$MODEL_HOME/bert_model.ckpt
+  --init_checkpoint=$MODEL_HOME/bert_model.ckpt \
   --do_train=True \
   --train_file=$DATA_DIR/big_train_data.json \
   --train_batch_size=8 \
